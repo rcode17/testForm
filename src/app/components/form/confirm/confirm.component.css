@@ -5,7 +5,7 @@ mat-card {
     border-radius: 15px; /* Ajusta el valor según el redondeo que desees */
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); /* Ajusta el valor según la intensidad y color de sombra que desees */
   }
-
+ 
   mat-card-content{
     text-align: left;
   }
