@@ -1,0 +1,57 @@
+
+.mat-error {
+  font-size: 12px; 
+}
+.mat-label {
+  font-size: 15px; 
+}
+
+.content {
+  margin-top: 80px; 
+  padding: 20px; 
+}
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: max-content;
+  border-radius: 15px; 
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); 
+  font-style: normal;
+}
+
+.header{
+  padding-top: 30px;
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(0, 70, 175);
+  font-style: italic;
+
+}
+hr {
+  border: none; /* Eliminamos el borde predeterminado del hr */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Ajusta el color y la transparencia según tus preferencias */
+  margin: 10px 0; /* Ajusta los márgenes superior e inferior según tus preferencias */
+  padding-bottom: 25px;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.button-row {
+  padding-top: 5px;
+}
+
+.button-row a {
+  margin-right: 8px;
+  text-align: center;
+}
+.text{
+  font-size: 18px;
+  font-style: italic;
+  color: rgb(26, 33, 133);
+}
+

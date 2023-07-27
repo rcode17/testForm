@@ -1,0 +1,67 @@
+<mat-card class="mat-card host content">
+    <mat-card-content>
+        <div class="header">
+            <P>Haz parte de nuestra compañia! </P>
+            <span class="text">Llena este formulario para enviarnos tu hoja de vida</span>
+            <hr>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label class="mat-label">Nombre Completo</mat-label>
+                <input matInput formControlName="name">
+                <div *ngIf="form.get('name').invalid && form.get('name').touched">
+                    <mat-error class="mat-error" *ngIf="form.get('name').errors['required']">El nombre es requerido</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label class="mat-label">Correo Electronico</mat-label>
+                <input matInput formControlName="email">
+                <div *ngIf="form.get('email').invalid && form.get('email').touched">
+                    <mat-error class="mat-error" *ngIf="form.get('email').errors['required']">El correo electronico es
+                        requerido</mat-error>
+                    <mat-error class="mat-error" *ngIf="form.get('email').errors['email']">El correo electronico no es valido</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label class="mat-label">No. Telefono</mat-label>
+                <input matInput formControlName="phone" maxLength="10">
+                <div *ngIf="form.get('phone').invalid && form.get('phone').touched">
+                    <mat-error class="mat-error" *ngIf="form.get('phone').errors['pattern']">Solo debe contener numeros</mat-error>
+                    <mat-error class="mat-error" *ngIf="form.get('phone').errors['required']">El numero de telefono es
+                        requerido</mat-error>
+                    <mat-error class="mat-error" *ngIf="form.get('phone').errors['minlength']">El numero no es valido, debe ser de 10
+                        digitos</mat-error>
+                    
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label class="mat-label">Experiencia Laboral</mat-label>
+                <textarea matInput formControlName="expWork" maxLength="256"></textarea>
+                <!--mat-hint align="end">{{ form.get('expWork').value?.length || 0 }} / 256 caracteres</mat-hint>-->
+                <div *ngIf="form.get('expWork').invalid && form.get('expWork').touched">
+                    <mat-error class="mat-error" *ngIf="form.get('phone').errors['required']">La descripcion de experiencia laboral es
+                        requerida</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label class="mat-label">Puesto De Interes</mat-label>
+                <mat-select formControlName="pInterest">
+                    <mat-option class="mat-error" *ngFor="let opcion of opciones" [value]="opcion.valor">{{ opcion.nombre }}</mat-option>
+                </mat-select>
+                <div *ngIf="form.get('pInterest').invalid && form.get('pInterest').touched">
+                    <mat-error class="mat-error" *ngIf="form.get('pInterest').errors['required']">Seleccione una de las opciones.</mat-error>
+                </div>
+            </mat-form-field>
+
+            <div>
+                <button  mat-raised-button  color="primary" type="submit" [disabled]="form.invalid" >Enviar</button>
+            </div>
+            
+        </form>
+    </mat-card-content>
+</mat-card>
