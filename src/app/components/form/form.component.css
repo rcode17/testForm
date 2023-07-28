@@ -31,9 +31,9 @@ mat-card {
 
 }
 hr {
-  border: none; /* Eliminamos el borde predeterminado del hr */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Ajusta el color y la transparencia según tus preferencias */
-  margin: 10px 0; /* Ajusta los márgenes superior e inferior según tus preferencias */
+  border: none; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+  margin: 10px 0; 
   padding-bottom: 25px;
 }
 
@@ -53,5 +53,25 @@ hr {
   font-size: 18px;
   font-style: italic;
   color: rgb(26, 33, 133);
+}
+.attach{
+  width: 80%;
+  height: 80px;
+}
+.custom-file-input {
+  position: relative;
+}
+.custom-file-input-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin: auto; 
+  width: 80%; 
+  margin-top: 2px;
+}
+
+.file-input {
+  display:flex; 
+  
 }
 

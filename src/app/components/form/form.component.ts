@@ -13,6 +13,7 @@ export class FormComponent {
   @Output() formSubmitted = new EventEmitter<void>();
 
   form: FormGroup;
+  selectedFile: File | null = null;
 
   opciones = [
     { nombre: 'Desarrollador Java', valor: 'op1' },
@@ -29,9 +30,14 @@ export class FormComponent {
       phone: ['', [Validators.required, Validators.minLength(10),Validators.pattern(/^[0-9]+$/)]],
       expWork: ['', Validators.required],
       pInterest: ['', Validators.required],
-      //cvAttach!: File;
+      selectedFile: ['', Validators.required]
 
     });
+  }
+
+ 
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
   }
 
   submit() {
@@ -39,7 +45,7 @@ export class FormComponent {
       const formData = this.form.value;
       this.formService.enviarFormulario(formData).subscribe(
         response => {
-          // Manejo de la respuesta exitosa
+          
           console.log('Respuesta exitosa:', response);
           this.formService.setMessage(response.message);
           this.formSubmitted.emit();
